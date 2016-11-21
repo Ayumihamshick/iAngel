@@ -49,6 +49,9 @@
             var thas = this;
             this._module = module;
             var arr: Array<any> = this.getParams();
+            if (!arr) {
+                arr = [];
+            }
             arr[arr.length] = function (...params: Array<any>) {
                 thas.onCreate(this, ...params);
             }

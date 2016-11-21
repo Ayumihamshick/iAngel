@@ -26,6 +26,9 @@ var iAngel;
             var thas = this;
             this._module = module;
             var arr = this.getParams();
+            if (!arr) {
+                arr = [];
+            }
             arr[arr.length] = function () {
                 var params = [];
                 for (var _i = 0; _i < arguments.length; _i++) {

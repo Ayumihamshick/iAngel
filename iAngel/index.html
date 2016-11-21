@@ -3,13 +3,35 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>TypeScript HTML App</title>
+    <title>iAngel</title>
+    
+    <link href="res/css/bootstrap-combined.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="app.css" type="text/css" />
+    <script src="Scripts/angular.min.js"></script>
+    <script src="lib/iAngle.js"></script>
+    <script src="src/clazz.js"></script>
     <script src="app.js"></script>
 </head>
-<body>
-    <h1>TypeScript HTML App</h1>
-
-    <div id="content"></div>
+<body ng-app="demo">
+    <div class="book">
+        <h1>Welcome iAngel</h1>
+        <div style="height:90%;margin:10px" ng-controller="TeacherController">
+            <div style="width:40%;height:100%;float:left; box-shadow:2px 2px 5px 0 rgba(0, 0, 0, 0.8)">
+                <div style="margin:10px">
+                    {{talk}} 
+                    <hr />
+                    <button ng-click="last()" style="display:{{isStart()}}" class="btn btn-primary">Last</button>
+                    <button ng-click="next()" style="display:{{isEnd()}}" class="btn btn-primary">Next</button>
+                </div>
+            </div>
+            <div style="width:60%;height:100%;float:right;">
+                <div ng-controller="FirstController" style="margin:10px">
+                    Your Name:<input style="margin-left:5px" type="text" ng-model="name" />
+                    <hr />
+                    Hello {{name}}!
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
