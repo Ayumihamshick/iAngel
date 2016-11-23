@@ -248,5 +248,4 @@ ModelManifest.xml
 packages/*.*
 iAngel/bin
 iAngel/obj
-iAngel/*.csproj
-iAngel/*.config
+
