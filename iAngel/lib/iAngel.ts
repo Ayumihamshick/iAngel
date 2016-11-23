@@ -1,8 +1,16 @@
 ﻿module iAngel {
     export class Utils {
         public static getClassName(clazz): string {
+        
+            for (var names in window) {
+                if (window[names] == clazz) {
+                
+                    return names;
+                }
+            }
             return (clazz.toString().replace(/function\s?/mi, "").split("("))[0];
         }
+
     }
 
     interface iClassName {
@@ -53,7 +61,7 @@
                 arr = [];
             }
             arr[arr.length] = function (...params: Array<any>) {
-                thas.onCreate(this, ...params);
+                return thas.onCreate(this, ...params);
             }
             this._init(arr, module);
         }
@@ -89,6 +97,7 @@
         }
         _init(arr, module) {
             this._name = Utils.getClassName((<any>this).constructor);
+            
             module.controller(this.getName(), arr);
         }
     }
